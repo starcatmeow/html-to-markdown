@@ -101,6 +101,14 @@ type Options struct {
 	// be useful if you want to proxy the images.
 	GetAbsoluteURL func(selec *goquery.Selection, rawURL string, domain string) string
 
+	// The start symbol of escaped block. Set to "" to disable escaped block feature.
+	// default: ""
+	EscapeStart string
+
+	// The end symbol of escaped block. Set to "" to disable escaped block feature.
+	// default: ""
+	EscapeEnd string
+
 	// GetCodeBlockLanguage identifies the language for syntax highlighting
 	// of a code block. The default is `DefaultGetCodeBlockLanguage`, which
 	// only gets the attribute x from the selection.
