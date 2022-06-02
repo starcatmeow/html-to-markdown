@@ -1,4 +1,4 @@
-module github.com/JohannesKaufmann/html-to-markdown
+module github.com/starcatmeow/html-to-markdown
 
 go 1.13
 
