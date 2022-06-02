@@ -3,8 +3,8 @@ package md_test
 import (
 	"testing"
 
-	md "github.com/JohannesKaufmann/html-to-markdown"
-	"github.com/JohannesKaufmann/html-to-markdown/plugin"
+	md "github.com/starcatmeow/html-to-markdown"
+	"github.com/starcatmeow/html-to-markdown/plugin"
 )
 
 func TestPlugins(t *testing.T) {

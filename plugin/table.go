@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"strings"
 
-	md "github.com/JohannesKaufmann/html-to-markdown"
+	md "github.com/starcatmeow/html-to-markdown"
 	"github.com/PuerkitoBio/goquery"
 )
 

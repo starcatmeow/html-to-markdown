@@ -9,7 +9,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/JohannesKaufmann/html-to-markdown/escape"
+	"github.com/starcatmeow/html-to-markdown/escape"
 	"github.com/PuerkitoBio/goquery"
 )
 
