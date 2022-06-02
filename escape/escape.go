@@ -67,14 +67,14 @@ func MarkdownCharacters(text string) string {
 func MarkdownCharactersWithEscape(text string, startSymbol string, endSymbol string) string {
 	result := ""
 	for {
-		startSymbolPos := text.Index(startSymbol)
+		startSymbolPos := strings.Index(text, startSymbol)
 		if startSymbolPos == -1 {
 			result += MarkdownCharacters(text)
 			return result
 		}
 		result += MarkdownCharacters(string([]rune(text)[:startSymbolPos]))
 		text = string([]rune(text)[startSymbolPos:])
-		endSymbolPos := text.Index(endSymbol)
+		endSymbolPos := strings.Index(text, endSymbol)
 		if endSymbolPos == -1 {
 			result += MarkdownCharacters(text)
 			return result
