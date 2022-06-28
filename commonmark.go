@@ -9,8 +9,8 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/starcatmeow/html-to-markdown/escape"
 	"github.com/PuerkitoBio/goquery"
+	"github.com/starcatmeow/html-to-markdown/escape"
 )
 
 var multipleSpacesR = regexp.MustCompile(`  +`)
@@ -78,6 +78,9 @@ var commonmark = []Rule{
 	{
 		Filter: []string{"#text"},
 		Replacement: func(content string, selec *goquery.Selection, opt *Options) *string {
+			if selec.Parent().Is("var") {
+				return String(selec.Text())
+			}
 			text := selec.Text()
 			if trimmed := strings.TrimSpace(text); trimmed == "" {
 				return String("")
