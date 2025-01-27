@@ -80,16 +80,16 @@ func MarkdownCharactersWithEscape(text string, startSymbols []string, endSymbols
 			result += MarkdownCharacters(text)
 			return result
 		}
-		result += MarkdownCharacters(string([]rune(text)[:startSymbolPos]))
+		result += MarkdownCharacters(text[:startSymbolPos])
 		result += startSymbols[symbolId]
-		text = string([]rune(text)[startSymbolPos + len([]rune(startSymbols[symbolId])):])
+		text = text[startSymbolPos + len(startSymbols[symbolId]):]
 		endSymbolPos := strings.Index(text, endSymbols[symbolId])
 		if endSymbolPos == -1 {
 			result += MarkdownCharacters(text)
 			return result
 		}
-		result += string([]rune(text)[:endSymbolPos + len([]rune(endSymbols[symbolId]))])
-		text = string([]rune(text)[endSymbolPos + len([]rune(endSymbols[symbolId])):])
+		result += text[:endSymbolPos + len(endSymbols[symbolId])]
+		text = text[endSymbolPos + len(endSymbols[symbolId]):]
 	}
 	return result
 }
